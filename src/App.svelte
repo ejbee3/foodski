@@ -1,4 +1,16 @@
 <script lang="ts">
+  import Footer from "./lib/Footer.svelte";
+  import Map from "./lib/Map.svelte";
+
+  let apiData = [];
+
+  function fetchMapData() {
+    fetch(`https://data.sfgov.org/resource/rqzj-sfat.json`)
+      .then((resp) => resp.json())
+      .then((data) => {
+        apiData = data;
+      });
+  }
 </script>
 
 <main>
@@ -6,6 +18,9 @@
     foodski,
     <span>a food truck locator </span><span class="truck-emoji">🚚</span>
   </h1>
+  <button on:click|once={fetchMapData}>Find Food!</button>
+  <Map trucks={apiData} />
+  <Footer />
 </main>
 
 <style>
@@ -21,6 +36,10 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
+  }
+
+  button {
+    margin-bottom: 2.5rem;
   }
 
   span {
