@@ -9,9 +9,8 @@
 
 - can't figure out how to add Tailwind to just a front end svelte app, I'm not wasting any more time on it.
 
-### TODOS:
+### extras:
 
-- make leaflet map ui
-- add food truck markers to ui
-- allow for user to search based on their location
-- display the types of food the truck has from the api
+- add types to leaflet variables and fetched data
+- add custom icons depending on the type of food (question mark for no info, taco for tacos, etc.)
+- add loading spinner while data is fetching
