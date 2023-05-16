@@ -3,13 +3,32 @@
 
   let mapElement;
   let map;
-
-  export let trucks;
+  let trucks = [];
 
   onMount(async () => {
     const leaflet = await import("leaflet");
 
     map = leaflet.map(mapElement).setView([37.7773, -122.4196], 12);
+
+    if (map) {
+      fetch("https://data.sfgov.org/resource/rqzj-sfat.json")
+        .then((resp) => resp.json())
+        .then((data) => {
+          trucks = data;
+        })
+        .finally(() => {
+          for (let i = 0; i < trucks.length; i++) {
+            leaflet
+              .marker([Number(trucks[i].latitude), Number(trucks[i].longitude)])
+              .addTo(map)
+              .bindPopup(
+                `${trucks[i].applicant}<br>${
+                  trucks[i].fooditems || "no info given"
+                }`
+              );
+          }
+        });
+    }
 
     leaflet
       .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -17,12 +36,6 @@
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       })
       .addTo(map);
-
-    // leaflet
-    //   .marker([51.5, -0.09])
-    //   .addTo(map)
-    //   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-    //   .openPopup();
   });
 
   onDestroy(async () => {
