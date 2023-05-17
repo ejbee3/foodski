@@ -14,7 +14,7 @@
       popupAnchor: [-3, -45],
     });
 
-    map = leaflet.map(mapElement).setView([37.7773, -122.4196], 12);
+    map = leaflet.map(mapElement).setView([37.7773, -122.4196], 11);
 
     if (map) {
       fetch("https://data.sfgov.org/resource/rqzj-sfat.json")
@@ -62,7 +62,12 @@
 <style>
   @import "leaflet/dist/leaflet.css";
   main div {
-    height: 600px;
-    border: solid 4px lightslategray;
+    height: 550px;
+    display: block;
+    box-shadow: var(--shadow-inset);
+    border-width: 3px;
+    border-style: solid;
+    border-color: hsl(0deg 0% 90%) hsl(0deg 0% 94%) hsl(0deg 0% 97%)
+      hsl(0deg 0% 95%);
   }
 </style>
