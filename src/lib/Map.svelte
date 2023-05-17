@@ -7,13 +7,11 @@
 
   onMount(async () => {
     const leaflet = await import("leaflet");
-
-    leaflet.Icon.Default.imagePath = "/";
-
-    leaflet.Icon.Default.mergeOptions({
-      iconRetinaUrl: import("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: import("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: import("leaflet/dist/images/marker-shadow.png"),
+    const tacoIcon = leaflet.icon({
+      iconUrl: "./taco.png",
+      iconSize: [38, 60],
+      iconAnchor: [35, 55],
+      popupAnchor: [-3, -45],
     });
 
     map = leaflet.map(mapElement).setView([37.7773, -122.4196], 12);
@@ -27,7 +25,10 @@
         .finally(() => {
           for (let i = 0; i < trucks.length; i++) {
             leaflet
-              .marker([Number(trucks[i].latitude), Number(trucks[i].longitude)])
+              .marker(
+                [Number(trucks[i].latitude), Number(trucks[i].longitude)],
+                { icon: tacoIcon }
+              )
               .addTo(map)
               .bindPopup(
                 `${trucks[i].applicant}<br>${
