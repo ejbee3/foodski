@@ -13,7 +13,8 @@
     <p>
       CSS design by <a
         href="https://codepen.io/kirkone/pen/VwEBOYZ"
-        target="_blank">KirK</a
+        target="_blank"
+        rel="noopener">KirK</a
       >
     </p>
   </figure>
