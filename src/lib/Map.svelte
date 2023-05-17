@@ -8,6 +8,8 @@
   onMount(async () => {
     const leaflet = await import("leaflet");
 
+    leaflet.Icon.Default.imagePath = "../../public/assets";
+
     map = leaflet.map(mapElement).setView([37.7773, -122.4196], 12);
 
     if (map) {
