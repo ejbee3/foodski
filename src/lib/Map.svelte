@@ -9,7 +9,7 @@
     const leaflet = await import("leaflet");
     const tacoIcon = leaflet.icon({
       iconUrl: "./taco.png",
-      iconSize: [38, 60],
+      iconSize: [52, 48],
       iconAnchor: [35, 55],
       popupAnchor: [-3, -45],
     });
