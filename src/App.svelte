@@ -11,7 +11,10 @@
   <figure>
     <Map />
     <p>
-      CSS design by <a href="https://codepen.io/kirkone/pen/VwEBOYZ">KirK</a>
+      CSS design by <a
+        href="https://codepen.io/kirkone/pen/VwEBOYZ"
+        target="_blank">KirK</a
+      >
     </p>
   </figure>
   <Footer />

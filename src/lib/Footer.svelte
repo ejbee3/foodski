@@ -1,8 +1,12 @@
 <footer>
   <p>
-    Made by <a href="https://github.com/ejbee3/foodski">Joe Baranski</a>, using
+    Made by <a href="https://github.com/ejbee3/foodski" target="_blank"
+      >Joe Baranski</a
+    >, using
     <span
-      ><a href="https://vitejs.dev/guide/">Svelte + TypeScript + Vite</a></span
+      ><a href="https://vitejs.dev/guide/" target="_blank"
+        >Svelte + TypeScript + Vite</a
+      ></span
     >
   </p>
 </footer>
