@@ -31,7 +31,7 @@
               )
               .addTo(map)
               .bindPopup(
-                `${trucks[i].applicant}<br>${
+                `<b>${trucks[i].applicant}</b><br>${
                   trucks[i].fooditems || "no info given"
                 }`
               );
